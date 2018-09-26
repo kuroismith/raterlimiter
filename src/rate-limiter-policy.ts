@@ -12,12 +12,18 @@ export abstract class RateLimiterPolicy {
 
   intervalPerPermit: number;
 
-  protected constructor(interval: number, capacity: number, maxBurstTime: number) {
-    this.interval = interval;
-    this.capacity = capacity;
-    this.intervalPerPermit = interval / capacity;
-    this.maxBurstTokens = Math.min(maxBurstTime / this.intervalPerPermit, capacity);
+  protected constructor(options: RateLimiterPolicyOptions) {
+    this.interval = options.interval;
+    this.capacity = options.capacity;
+    this.intervalPerPermit = options.interval / options.capacity;
+    this.maxBurstTokens = Math.min(options.maxBurstTime / this.intervalPerPermit, options.capacity);
   }
 
   abstract bucketKey(identity: string): string;
+}
+
+export interface RateLimiterPolicyOptions {
+  interval: number;
+  capacity: number;
+  maxBurstTime: number;
 }
