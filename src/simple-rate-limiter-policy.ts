@@ -1,13 +1,16 @@
 // Copyright 2018- GAGO Ltd. All rights reserved.
 // Created by wuqinchun at gagogroup.com.
 
-import { RateLimiterPolicy } from "./rate-limiter-policy";
+import {
+  RateLimiterPolicy,
+  RateLimiterPolicyOptions
+} from "./rate-limiter-policy";
 
 export class SimpleRateLimiterPolicy extends RateLimiterPolicy {
   static SEP = "_";
 
-  constructor(interval: number, capacity: number, maxBurstTime: number) {
-    super(interval, capacity, maxBurstTime);
+  constructor(options: RateLimiterPolicyOptions) {
+    super(options);
   }
 
   bucketKey(identity: string): string {
