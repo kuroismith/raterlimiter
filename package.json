@@ -15,5 +15,15 @@
     "email": "kuroismith@gmail.com",
     "url": "https://github.com/kuroismith"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "microtime": "^2.1.8",
+    "redis": "^2.8.0",
+    "sha1": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/microtime": "^2.1.0",
+    "@types/redis": "^2.8.6",
+    "@types/sha1": "^1.1.1"
+  }
 }
