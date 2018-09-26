@@ -62,5 +62,3 @@ else
     redis.call('hset', key, 'tokensRemaining', currentTokens - 1)
     return 1
 end
-
-return logtable
