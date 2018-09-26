@@ -5,7 +5,7 @@ A rate limiter based on token bucket algorithm using redis
 # Usage
 
 ```typescript
-  let client: RedisClient = ???
+  let client: RedisClient = redis.createClient({host: "127.0.0.1"});
   // In every 20000 milliseconds, the resource can be access 100 times
   const policy: RateLimiterPolicy = new SimpleRateLimiterPolicy({
     interval: 20000,
