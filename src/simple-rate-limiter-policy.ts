@@ -3,7 +3,7 @@
 
 import { RateLimiterPolicy } from "./rate-limiter-policy";
 
-export class SimpleRateLimitPolicy extends RateLimiterPolicy {
+export class SimpleRateLimiterPolicy extends RateLimiterPolicy {
   static SEP = "_";
 
   constructor(interval: number, capacity: number, maxBurstTime: number) {
@@ -11,6 +11,6 @@ export class SimpleRateLimitPolicy extends RateLimiterPolicy {
   }
 
   bucketKey(identity: string): string {
-    return `LIMIT${SimpleRateLimitPolicy.SEP}${this.interval}${SimpleRateLimitPolicy.SEP}${this.capacity}${SimpleRateLimitPolicy.SEP}${identity}`;
+    return `LIMIT${SimpleRateLimiterPolicy.SEP}${this.interval}${SimpleRateLimiterPolicy.SEP}${this.capacity}${SimpleRateLimiterPolicy.SEP}${identity}`;
   }
 }
