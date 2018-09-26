@@ -1,0 +1,19 @@
+{
+  "name": "ratelimiter",
+  "version": "0.0.1",
+  "description": "A rate limiter based on token bucker algorithm using redis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kuroismith/raterlimiter.git"
+  },
+  "author": {
+    "name": "kuroismith",
+    "email": "kuroismith@gmail.com",
+    "url": "https://github.com/kuroismith"
+  },
+  "license": "MIT"
+}
