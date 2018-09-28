@@ -34,7 +34,7 @@ export class RedisRateLimiter extends RateLimiter {
     ];
 
     return new Promise<boolean>((resolve, reject) => {
-      this.client.evalsha(RedisRateLimiter.SCRIPT_SHA, ...redisKeysAndArgs, (e1: Error, r1) => {
+      this.client.evalsha(RedisRateLimiter.SCRIPT, ...redisKeysAndArgs, (e1: Error, r1) => {
         if (e1) {
           if (e1.message.includes('NOSCRIPT')) {
             this.client.evalsha(RedisRateLimiter.SCRIPT_SHA, ...redisKeysAndArgs, (e2: Error, r2) => {
